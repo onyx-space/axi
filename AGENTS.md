@@ -81,6 +81,10 @@ Because the release PR carries the version bump, a downstream `*-axi` tool only 
   `pnpm run docs:gen` rewrites the marked `generated:...` regions of README.md and docs/index.html; never hand-edit those regions.
   The `docs-check` workflow runs `pnpm run docs:check` and fails on drift, including when `.agents/skills/axi/SKILL.md` section headings stop matching the canonical principle titles.
 
+## Raising PRs to upstream
+
+Human-authored PRs targeting `main` must be raised through [`no-mistakes`](https://github.com/kunchenguid/no-mistakes) (`no-mistakes init --fork-url git@github.com:onyx-space/axi.git`, then `git push no-mistakes`): CI enforces a deterministic signature in the PR body and maintainer triage blocks hand-raised PRs. Do not push a PR branch straight to `origin`. See CONTRIBUTING.md.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
