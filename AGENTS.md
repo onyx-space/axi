@@ -81,7 +81,9 @@ Because the release PR carries the version bump, a downstream `*-axi` tool only 
   `pnpm run docs:gen` rewrites the marked `generated:...` regions of README.md and docs/index.html; never hand-edit those regions.
   The `docs-check` workflow runs `pnpm run docs:check` and fails on drift, including when `.agents/skills/axi/SKILL.md` section headings stop matching the canonical principle titles.
 
-## Raising PRs to upstream
+## Raising PRs
+
+PRs in this repo are routed through `pr-axi`: `pr-axi raise` opens a same-repo PR (onyx-space/axi), `pr-axi raise --upstream` opens a PR to the parent (kunchenguid/axi) via a transient fork switch. See `~/.agents/skills/pr-axi/SKILL.md`.
 
 Human-authored PRs targeting `main` must be raised through [`no-mistakes`](https://github.com/kunchenguid/no-mistakes) (`no-mistakes init --fork-url git@github.com:<you>/axi.git`, then `git push no-mistakes`): CI enforces a deterministic signature in the PR body and maintainer triage blocks hand-raised PRs. Do not push a PR branch straight to `origin`. See CONTRIBUTING.md.
 
